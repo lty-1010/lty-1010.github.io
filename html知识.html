@@ -5,75 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>lty-1010.github.io</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-	<style>
-        /* CSS 样式 */
-        .tooltip {
-            position: absolute;
-            display: none;
-            padding: 5px;
-            border-radius: 5px;
-            animation-name: tooltipAnimation;
-            animation-duration: 1s;
-        }
-        
-        @keyframes tooltipAnimation {
-            /* 定义文字元素动画 */
-            0% {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0%);
-            }
-        }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const tooltips = [];
-            const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF']; // 可用的彩色列表
-
-            document.addEventListener('click', function(event) {
-                // 随机选择文字和颜色
-                const texts = ['富强', '民主', '文明', '和谐', '自由', '平等', '公正', '法治', '爱国', '敬业', '诚信', '友善'];
-                const randomText = texts[Math.floor(Math.random() * texts.length)];
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                
-                // 创建文字元素
-                const tooltip = document.createElement('div');
-                tooltip.classList.add('tooltip');
-                tooltip.innerText = randomText;
-                tooltip.style.backgroundColor = randomColor; // 设置背景颜色
-                
-                // 获取鼠标位置
-                const mouseX = event.clientX;
-                const mouseY = event.clientY;
-                const tooltipWidth = tooltip.offsetWidth;
-                // 计算水平居中位置
-                tooltip.style.left = (mouseX - tooltipWidth / 2) + 'px';
-                tooltip.style.top = mouseY + 'px';
-                document.body.appendChild(tooltip);
-                
-                tooltips.push(tooltip);
-
-                setTimeout(function() {
-                    // 显示文字元素
-                    tooltip.style.display = 'block';
-                    setTimeout(function() {
-                        // 隐藏文字元素
-                        tooltip.style.opacity = '0';
-                        tooltip.style.transform = 'translateY(100%)';
-                        setTimeout(function() {
-                            // 移除文字元素
-                            tooltip.remove();
-                            tooltips.shift();
-                        }, 1000);
-                    }, 1500);
-                }, 100);
-            });
-        });
-    </script>
+    
 </head>
 <body>
 	<h1><a href="index.html">首页</a><span></span>

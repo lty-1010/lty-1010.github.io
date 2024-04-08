@@ -5,3 +5,25 @@ body{
 h1 span{
     margin: 0 50px;
 }
+
+ /* CSS 样式 */
+ .tooltip {
+    position: absolute;
+    display: none;
+    padding: 5px;
+    border-radius: 5px;
+    animation-name: tooltipAnimation;
+    animation-duration: 1s;
+}
+
+@keyframes tooltipAnimation {
+    /* 定义文字元素动画 */
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
